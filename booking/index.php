@@ -1,4 +1,4 @@
-<?php  session_start()?>
+<?php session_start()?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -44,20 +44,21 @@ a{
 </div>
 </div>
 <?php
-function generate_order(){
-	
+function generate_order()
+{
+
 //These are just Random Letters forming a transaction ID
-$order_ref="";
-$char=array('O','T','R','S','A','C','B','E');
-$num=rand(11,99);
-$num2=rand(12,89);
-$num3=rand(13,92);
-shuffle($char);
+    $order_ref = "";
+    $char = array('O', 'T', 'R', 'S', 'A', 'C', 'B', 'E');
+    $num = rand(11, 99);
+    $num2 = rand(12, 89);
+    $num3 = rand(13, 92);
+    shuffle($char);
 //now the final
-$order_ref=$char[0].$char[3].$num.$char[1].$num2.$char[2].$num3.$char[4];
+    $order_ref = $char[0] . $char[3] . $num . $char[1] . $num2 . $char[2] . $num3 . $char[4];
 //assignming to user
-$_SESSION['ORDERREF']=$order_ref;
-	
+    $_SESSION['ORDERREF'] = $order_ref;
+
 }
 generate_order();
 ?>
